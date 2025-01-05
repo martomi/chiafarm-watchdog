@@ -28,7 +28,7 @@ class WalletPeakParser:
         logging.debug("Enabled parser for wallet activity - peak age.")
         self._regex = re.compile(
             r"([0-9:.T\-\+]*)"
-            r" wallet (?:src|chia)\.wallet\.wallet_blockchain(?:\s*)?: INFO\s+"
+            r" (?:[-0-9a-zA-Z.]+ )?wallet (?:src|chia)\.wallet\.wallet_blockchain(?:\s*)?: INFO\s+"
             r"Peak set to: ([0-9]+) timestamp: ([0-9]+)"
         )
 

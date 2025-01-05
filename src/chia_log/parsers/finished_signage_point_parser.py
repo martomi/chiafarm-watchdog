@@ -29,7 +29,7 @@ class FinishedSignagePointParser:
         # Doing some "smart" tricks with this expression to also match the 64th signage point
         # with the same regex expression. See test examples to see how they differ.
         self._regex = re.compile(
-            r"([0-9:.]*) full_node (?:src|chia).full_node.full_node(?:\s?): INFO\s*(?:⏲️|.)[a-z A-Z,]* ([0-9]*)\/64"
+            r"([0-9:.]*) (?:[-0-9a-zA-Z.]+ )?full_node (?:src|chia).full_node.full_node(?:\s?): INFO\s*(?:⏲️|.)[a-z A-Z,]* ([0-9]*)\/64"
         )
 
     def parse(self, logs: str) -> List[FinishedSignagePointMessage]:

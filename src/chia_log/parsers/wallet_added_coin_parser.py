@@ -25,7 +25,7 @@ class WalletAddedCoinParser:
     def __init__(self):
         logging.debug("Enabled parser for wallet activity - added coins.")
         self._regex = re.compile(
-            r"([0-9:.]*) wallet (?:src|chia).wallet.wallet_(?:state_manager|node)(?:\s*)?: "
+            r"([0-9:.]*) (?:[-0-9a-zA-Z.]+ )?wallet (?:src|chia).wallet.wallet_(?:state_manager|node)(?:\s*)?: "
             r"INFO\s*(?:Adding|Adding record to state manager|request) coin: (?:.*)'?amount'?: ([0-9]*)(\s})?,"
         )
 
